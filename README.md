@@ -1,7 +1,7 @@
 <br>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/zojize/unocss-extractor-types/main/icon.svg" style="width:100px;" />
+<img src="https://raw.githubusercontent.com/zojize/unocss-preset-types/main/icon.svg" style="width:100px;" />
 </p>
 
 # unocss-preset-types
