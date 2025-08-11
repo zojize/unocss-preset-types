@@ -86,7 +86,6 @@ export default function presetTypes(
 
     const isVue = /\.vue$/.test(id)
     if (!isVue && !/\.tsx?$/.test(id)) {
-      console.warn(`preset-types: file ${id} is not a .vue or .ts/.tsx file, skipping.`)
       return
     }
 
@@ -119,7 +118,6 @@ export default function presetTypes(
       )
 
       if (!tsconfigPath) {
-        console.warn(`preset-types: Could not find a 'tsconfig.json' in ${import.meta.dirname}`)
         return
       }
 
@@ -158,7 +156,6 @@ export default function presetTypes(
     }
 
     if (!sourceFile) {
-      console.warn(`preset-types: Source file ${filename} could not be created.`)
       return
     }
 
