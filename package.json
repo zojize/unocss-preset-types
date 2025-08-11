@@ -1,0 +1,72 @@
+{
+  "name": "unocss-extractor-types",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
+  "description": "UnoCSS extractor for TypeScript types",
+  "author": "Jize Zou <jeffzou2001@gmail.com> (https://github.com/zojize)",
+  "license": "MIT",
+  "homepage": "https://github.com/zojize/unocss-extractor-types#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zojize/unocss-extractor-types.git"
+  },
+  "bugs": "https://github.com/zojize/unocss-extractor-types/issues",
+  "keywords": [
+    "unocss",
+    "unocss-extractor",
+    "typescript"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint",
+    "prepublishOnly": "nr build",
+    "release": "bumpp && pnpm publish",
+    "start": "node src/index.ts",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepare": "simple-git-hooks"
+  },
+  "peerDependencies": {
+    "typescript": "catalog:compiler"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "catalog:compiler"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:cli",
+    "@types/node": "catalog:types",
+    "@unocss/cli": "catalog:testing",
+    "@unocss/core": "catalog:types",
+    "@unocss/vite": "catalog:testing",
+    "@vitejs/plugin-vue": "catalog:testing",
+    "bumpp": "catalog:cli",
+    "eslint": "catalog:cli",
+    "lint-staged": "catalog:cli",
+    "simple-git-hooks": "catalog:cli",
+    "tsx": "catalog:cli",
+    "unbuild": "catalog:cli",
+    "unocss": "catalog:testing",
+    "vite": "catalog:testing",
+    "vitest": "catalog:testing",
+    "vue": "catalog:testing"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
